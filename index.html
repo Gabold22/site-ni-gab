@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chill Zone</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-image: url('lofi-retro-background.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #ffe0b3;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 4em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      color: #ffe0b3;
+      font-size: 1.5em;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #333;
+      color: #ffe0b3;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .button:hover {
+      background-color: #555;
+      box-shadow: 0 0 10px #555;
+    }
+
+    .gif-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 999;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .gif-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .return-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #333;
+      color: #ffe0b3;
+      font-size: 1em;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      margin-top: 20px;
+    }
+
+    .return-button:hover {
+      background-color: #555;
+      box-shadow: 0 0 10px #555;
+    }
+  </style>
+  <script>
+    function showLofiPicture() {
+      var gifContainer = document.querySelector('.gif-container');
+      gifContainer.style.display = 'block';
+    }
+
+    function returnToPage() {
+      var gifContainer = document.querySelector('.gif-container');
+      gifContainer.style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Chill Zone</h1>
+    <p>Welcome to the Chill Zone website. Take a break, relax, and enjoy!</p>
+    <a href="#" class="button" onclick="showLofiPicture()">Enter</a>
+  </div>
+  <div class="gif-container">
+    <img src="https://www.icegif.com/wp-content/uploads/2021/09/icegif-5.gif" alt="Lofi GIF">
+    <a href="#" class="return-button" onclick="returnToPage()">Return to Page</a>
+  </div>
+</body>
+</html>
